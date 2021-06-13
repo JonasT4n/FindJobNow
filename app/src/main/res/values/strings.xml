@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Find Job Now</string>
+    <string name="app_title">FIND JOB NOW</string>
+
+    <string name="pref_file_key">local_data</string>
+    <string name="pref_save_username">username_data</string>
+
+    <string name="lorem_ipsum_line">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </string>
+
+    <string-array name="job_categories">
+        <item>All</item>
+        <item>Programming</item>
+        <item>Android</item>
+        <item>Web Development</item>
+    </string-array>
 </resources>

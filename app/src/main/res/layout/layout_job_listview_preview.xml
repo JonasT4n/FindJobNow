@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/jobListViewElement"
+    android:background="@drawable/bg_login_input_field">
+
+    <TextView
+        android:id="@+id/jobTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Sample Job Title"
+        android:fontFamily="@font/overlock_bold"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/jobDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lorem_ipsum_line"
+        android:fontFamily="@font/overlock_regular"
+        android:textSize="16sp"
+        android:padding="8dp"/>
+
+</LinearLayout>
