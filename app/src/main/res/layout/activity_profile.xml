@@ -27,6 +27,7 @@
             />
 
         <Button
+            android:id="@+id/GoBack_Btn"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_marginLeft="120dp"
@@ -51,6 +52,18 @@
                 android:layout_row="0"
                 android:layout_column="1"
                 android:text="Name: "
+                android:textColor="@color/colorBlack"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/profile_username"
+                android:layout_width="141dp"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:layout_marginLeft="65dp"
+                android:layout_marginTop="85dp"
+                android:text="@string/pref_save_username"
                 android:textColor="@color/colorBlack"
                 android:textSize="18dp" />
 
@@ -98,7 +111,7 @@
                 android:textSize="15dp" />
 
             <EditText
-                android:id="@+id/editTextDate2"
+                android:id="@+id/editTextDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="0"
