@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -14,16 +16,20 @@ import android.widget.Toolbar;
 
 import com.example.findjobnow.Adapters.JobListAdapter;
 import com.example.findjobnow.Adapters.JobListElementData;
+import com.example.findjobnow.Drawer.MainNavDrawer;
+import com.example.findjobnow.Drawer.NavDrawerType;
+import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 
 public class HomeActivity extends AppCompatActivity {
 
     ArrayList<JobListElementData> jobs = new ArrayList<>();
+    DrawerLayout drawerNav;
     ImageView sandwichMenuOpen, sandwichMenuClose;
     ListView jobListView;
-    DrawerLayout drawerNav;
     Spinner dropDownCategory;
+    MainNavDrawer mainNavDrawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,19 +42,21 @@ public class HomeActivity extends AppCompatActivity {
         drawerNav = findViewById(R.id.drawerLayout);
         jobListView = findViewById(R.id.homeJobList);
         dropDownCategory = findViewById(R.id.homeDropDownCategories);
+        mainNavDrawer = new MainNavDrawer(drawerNav, findViewById(R.id.mainNavView));
 
         // Assign on click event
-        sandwichMenuOpen.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openDrawer(drawerNav);
-            }
+        sandwichMenuOpen.setOnClickListener(v -> openDrawer(drawerNav));
+        sandwichMenuClose.setOnClickListener(v -> closeDrawer(drawerNav));
+        mainNavDrawer.getDrawerHome().setOnClickListener(view -> closeDrawer(drawerNav));
+        mainNavDrawer.getDrawerAboutUs().setOnClickListener(view -> {
+            Intent intent = new Intent(HomeActivity.this, AboutUsActivity.class);
+            startActivity(intent);
+            finish();
         });
-        sandwichMenuClose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                closeDrawer(drawerNav);
-            }
+        mainNavDrawer.getDrawerLogOut().setOnClickListener(view -> {
+            Intent intent = new Intent(HomeActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
         });
 
         // Create sample data

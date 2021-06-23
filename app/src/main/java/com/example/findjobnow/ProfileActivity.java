@@ -21,8 +21,10 @@ public class ProfileActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        mTextView = (TextView) findViewById(R.id.text);
+        // Get all view components
+        mTextView = findViewById(R.id.text);
 
+        // Subscribe events to views
         LoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -32,12 +34,9 @@ public class ProfileActivity extends AppCompatActivity{
                 startActivity(intent);
             }
         });
-
     }
 
-
-
-
     public void openDatePicker(View view) {
+
     }
 }
